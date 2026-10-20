@@ -1,0 +1,187 @@
+@import "tailwindcss";
+
+/* ============================================================
+   WHHC 2026-27 — DESIGN TOKENS
+   Everything on the site uses these. Need a colour? Use a token
+   (bg-brand, text-mute, border-line ...) — never a random hex.
+   ============================================================ */
+@theme inline {
+  --color-bg: #000000;
+  --color-surface: #0a0a0a;
+  --color-surface-2: #121212;
+  --color-line: rgb(255 255 255 / 0.09);
+  --color-ink: #f4f4f5;
+  --color-mute: #a1a1aa;
+  --color-brand: #ff3232; /* signature red — same as 2025-26 */
+  --color-brand-deep: #cc0000;
+
+  --font-display: var(--nf-display), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--nf-body), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--nf-mono), ui-monospace, monospace;
+
+  --animate-marquee: marquee 38s linear infinite;
+  --animate-float: float 7s ease-in-out infinite;
+  --animate-pulse-dot: pulse-dot 2s ease-in-out infinite;
+}
+
+html {
+  background: var(--color-bg);
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
+}
+
+::selection {
+  background: var(--color-brand);
+  color: #000;
+}
+
+/* slim dark scrollbar */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #050505; }
+::-webkit-scrollbar-thumb { background: #2a2a2a; border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-brand-deep); }
+
+/* ---------- layout helpers ---------- */
+@utility container-x {
+  width: 100%;
+  max-width: 72rem;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+  @media (min-width: 640px) { padding-inline: 2rem; }
+}
+
+@utility section-y {
+  padding-block: 5rem;
+  @media (min-width: 768px) { padding-block: 8rem; }
+}
+
+/* ---------- surfaces ---------- */
+@utility glass {
+  background: rgb(10 10 10 / 0.6);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--color-line);
+}
+
+@utility glow-text {
+  text-shadow: 0 0 18px rgb(255 50 50 / 0.55), 0 0 60px rgb(255 50 50 / 0.25);
+}
+
+/* Empty image slot — swap for <Image /> later (see ImagePlaceholder) */
+@utility hatch {
+  background-color: #050505;
+  background-image: repeating-linear-gradient(
+    135deg,
+    rgb(255 255 255 / 0.035) 0 1px,
+    transparent 1px 14px
+  );
+}
+
+/* faint hacker-grid used behind hero / page headers */
+@utility bg-grid {
+  background-image:
+    linear-gradient(to right, rgb(255 255 255 / 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(255 255 255 / 0.045) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 30%, transparent 78%);
+  -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 30%, transparent 78%);
+}
+
+/* ---------- cursor spotlight card (see SpotlightCard) ---------- */
+.spotlight {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.spotlight::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  background: radial-gradient(
+    380px circle at var(--mx, 50%) var(--my, 50%),
+    rgb(255 50 50 / 0.16),
+    transparent 60%
+  );
+  pointer-events: none;
+}
+.spotlight:hover::before { opacity: 1; }
+
+/* ---------- page enter animation (CSS only → works before JS loads) ---------- */
+.page-enter { animation: page-in 0.55s cubic-bezier(0.22, 1, 0.36, 1) both; }
+
+/* hero entrance helper: <div class="rise" style="--d:200ms"> */
+.rise {
+  animation: rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: var(--d, 0ms);
+}
+
+/* ---------- glitch wordmark: <h1 class="glitch" data-text="WHHC">WHHC</h1> ---------- */
+.glitch { position: relative; }
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+.glitch::before { color: var(--color-brand); animation: glitch-a 5s infinite steps(1); }
+.glitch::after  { color: #fff; mix-blend-mode: overlay; animation: glitch-b 5s infinite steps(1); }
+
+/* ---------- typing line ---------- */
+.typing {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid var(--color-brand);
+  vertical-align: bottom;
+  width: 0;
+  animation:
+    typing 2.6s steps(44, end) 1s forwards,
+    caret 0.8s step-end infinite;
+}
+
+/* ---------- keyframes ---------- */
+@keyframes marquee { to { transform: translate3d(-50%, 0, 0); } }
+@keyframes float { 50% { transform: translate3d(0, -10px, 0); } }
+@keyframes pulse-dot { 50% { opacity: 0.35; transform: scale(0.8); } }
+@keyframes page-in { from { opacity: 0; transform: translate3d(0, 14px, 0); } }
+@keyframes rise { from { opacity: 0; transform: translate3d(0, 28px, 0); } }
+@keyframes typing { to { width: calc(var(--chars) * 1ch); } }
+@keyframes caret { 50% { border-color: transparent; } }
+@keyframes glitch-a {
+  0%, 91%, 100% { opacity: 0; }
+  92% { opacity: 1; transform: translate3d(-4px, 0, 0); clip-path: inset(10% 0 62% 0); }
+  94% { opacity: 1; transform: translate3d(5px, 0, 0); clip-path: inset(58% 0 12% 0); }
+  96% { opacity: 1; transform: translate3d(-2px, 0, 0); clip-path: inset(30% 0 40% 0); }
+  98% { opacity: 0; }
+}
+@keyframes glitch-b {
+  0%, 92%, 100% { opacity: 0; }
+  93% { opacity: 0.8; transform: translate3d(4px, 0, 0); clip-path: inset(46% 0 30% 0); }
+  95% { opacity: 0.8; transform: translate3d(-5px, 0, 0); clip-path: inset(6% 0 70% 0); }
+  97% { opacity: 0; }
+}
+
+/* ---------- accessibility: honour "reduce motion" for ALL CSS animation ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    animation-delay: 0ms !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .typing { width: calc(var(--chars) * 1ch); }
+}
