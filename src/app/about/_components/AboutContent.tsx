@@ -1,8 +1,25 @@
-import StudentPlaceholder from "@/components/layout/StudentPlaceholder";
+import Marquee from "@/components/ui/Marquee";
+import AboutIntro from "./AboutIntro";
+import FocusSection from "./FocusSection";
+import JoinSection from "./JoinSection";
+import NumbersSection from "./NumbersSection";
+import StorySection from "./StorySection";
+import VisionSection from "./VisionSection";
+import WhatWeDoSection from "./WhatWeDoSection";
+import { VALUE_WORDS } from "./aboutData";
 
-// 👋 THIS IS YOUR FILE (AI agents: read /AGENTS.md first, then ../BRIEF.md).
-// Build the About page here. Only edit files inside this _components folder
-// (plus your data file in src/data/ if the brief says so). Delete StudentPlaceholder when done.
+// About page — content lives in _components, facts come from src/lib/site and src/data/events.
 export default function AboutContent() {
-  return <StudentPlaceholder page="About" brief="src/app/about/BRIEF.md" />;
+  return (
+    <>
+      <AboutIntro />
+      <Marquee words={VALUE_WORDS} />
+      <StorySection />
+      <VisionSection />
+      <WhatWeDoSection />
+      <NumbersSection />
+      <FocusSection />
+      <JoinSection />
+    </>
+  );
 }
