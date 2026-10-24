@@ -15,7 +15,7 @@ npm run dev        # open http://localhost:3000
 |---|---|---|---|---|
 | Home | `/` | Done | Tech head | — |
 | About | `/about` | Story, vision & mission, what we do, numbers, focus areas | Arcot Mohamed Shuwais | `src/app/about/BRIEF.md` |
-| The Crew | `/crew` | Faculty, senior and junior board from a data file. **Built:** junior board + faculty placeholders. **Still needed:** senior board and faculty photos | Sivaraman | `src/app/crew/BRIEF.md` |
+| The Crew | `/crew` | Faculty, senior and junior board from a data file. **Built:** faculty coordinators + junior board with photos. **Still needed:** senior board | Sivaraman | `src/app/crew/BRIEF.md` |
 | Events | `/events` | Past-events timeline/gallery; cover Tiranga Tales and Zero to Publications | Amancherla Ananya Srokrithi | `src/app/events/BRIEF.md` |
 | Technozarre | `/technozarre` | Countdown timer + message block about the fest | S. Keshav, S. Kumaresh | `src/app/technozarre/BRIEF.md` |
 

@@ -14,9 +14,8 @@ export type Member = {
 
 export const CREW: Member[] = [
   // --- Faculty coordinators ---
-  // TODO: confirm current faculty coordinators and add their photos.
-  { slug: "p-jayanthi", name: "Dr. P. Jayanthi", role: "Faculty Coordinator", group: "faculty" },
-  { slug: "s-jayalakshmi", name: "Dr. S. Jayalakshmi", role: "Faculty Coordinator", group: "faculty" },
+  { slug: "p-jayanthi", name: "Dr. P. Jayanthi", role: "Faculty Coordinator", group: "faculty", photo: "/images/crew/p-jayanthi.jpg" },
+  { slug: "s-jayalakshmi", name: "Dr. S. Jayalakshmi", role: "Faculty Coordinator", group: "faculty", photo: "/images/crew/s-jayalakshmi.jpg" },
 
   // --- Senior board of directors ---
   // TODO: add the senior board here (group: "senior"). The section appears automatically once it has people.
