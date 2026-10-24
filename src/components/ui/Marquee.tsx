@@ -14,7 +14,7 @@ export default function Marquee({ words }: { words: readonly string[] }) {
     </ul>
   );
   return (
-    <div className="relative overflow-hidden border-y border-line bg-black/40 py-5">
+    <div className="relative overflow-hidden border-y border-line bg-bg/40 py-5">
       <p className="sr-only">{words.join(", ")}</p>
       <div className="flex w-max animate-marquee will-change-transform">
         {row}

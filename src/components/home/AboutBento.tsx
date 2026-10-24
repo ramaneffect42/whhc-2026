@@ -72,7 +72,7 @@ export default function AboutBento() {
                     ["02", "Events", "Hackathons, coding contests, puzzle hunts and our annual fest."],
                     ["03", "Publications", "Articles on our site and social channels."],
                   ].map(([n, t, s]) => (
-                    <li key={n} className="rounded-xl border border-line bg-black/40 p-5">
+                    <li key={n} className="rounded-xl border border-line bg-bg/40 p-5">
                       <span className="font-mono text-xs text-brand">{n}</span>
                       <p className="mt-2 font-display text-xl font-semibold uppercase">{t}</p>
                       <p className="mt-1 text-sm text-mute">{s}</p>

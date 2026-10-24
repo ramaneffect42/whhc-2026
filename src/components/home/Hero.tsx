@@ -29,12 +29,12 @@ export default function Hero() {
       />
       <div
         aria-hidden
-        className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,transparent_30%,#000_85%)]"
+        className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,transparent_30%,var(--color-bg)_85%)]"
       />
 
       <m.div style={{ y, opacity }} className="container-x relative py-32 text-center">
         <p
-          className="rise mx-auto mb-8 inline-flex items-center gap-3 rounded-full border border-line bg-black/50 px-5 py-2 font-mono text-[11px] uppercase tracking-[0.25em] text-mute backdrop-blur"
+          className="rise mx-auto mb-8 inline-flex items-center gap-3 rounded-full border border-line bg-bg/50 px-5 py-2 font-mono text-[11px] uppercase tracking-[0.25em] text-mute backdrop-blur"
           style={d(100)}
         >
           <span className="h-2 w-2 animate-pulse-dot rounded-full bg-brand shadow-[0_0_10px_#ff3232]" />

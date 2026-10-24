@@ -1,5 +1,12 @@
 # About page — brief
 
+> ## 🤖 For AI agents — start here
+> 1. Read **`/AGENTS.md`** fully (rules, components, templates). This brief only adds page-specific content.
+> 2. Your task: the **About** page. Allowed files: `src/app/about/_components/*`. Edit nothing else.
+> 3. Your entry file is `src/app/about/_components/AboutContent.tsx` (currently shows `StudentPlaceholder` — replace it).
+> 4. Build one section per file in `_components/`, content from a `src/data/*.ts` file, using the section template in AGENTS.md §6.
+> 5. Finish only when `npm run lint` and `npm run build` pass, then tick "Done when" below.
+
 **You edit:** `src/app/about/_components/AboutContent.tsx` (and any new files in that `_components` folder).
 **Don't touch:** anything outside this folder. The banner at the top is already built.
 **Route:** `/about`
@@ -39,4 +46,4 @@ Look at `src/components/home/AboutBento.tsx` to see how the home page uses them.
 - [ ] Looks good on phone (375px) and laptop
 - [ ] No leftover `StudentPlaceholder`
 - [ ] `npm run lint` and `npm run build` pass
-- [ ] Read `/CLAUDE.md` rules (performance + colours)
+- [ ] Read `/AGENTS.md` rules (performance + colours)

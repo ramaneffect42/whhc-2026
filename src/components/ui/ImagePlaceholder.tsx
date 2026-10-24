@@ -10,7 +10,7 @@ type Props = {
 };
 
 /**
- * An empty black slot where a real photo will go.
+ * An empty slot where a real photo will go.
  *
  * REPLACING IT LATER:
  *   1. put the image in /public/images/...

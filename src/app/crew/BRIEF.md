@@ -1,5 +1,12 @@
 # The Crew page — brief
 
+> ## 🤖 For AI agents — start here
+> 1. Read **`/AGENTS.md`** fully (rules, components, templates). This brief only adds page-specific content.
+> 2. Your task: the **The Crew** page. Allowed files: `src/app/crew/_components/* and a new src/data/crew.ts`. Edit nothing else.
+> 3. Your entry file is `src/app/crew/_components/CrewContent.tsx` (currently shows `StudentPlaceholder` — replace it).
+> 4. Build one section per file in `_components/`, content from a `src/data/*.ts` file, using the section template in AGENTS.md §6.
+> 5. Finish only when `npm run lint` and `npm run build` pass, then tick "Done when" below.
+
 **You edit:** `src/app/crew/_components/CrewContent.tsx` (and any new files in that `_components` folder), plus create `src/data/crew.ts` for the people data.
 **Don't touch:** anything else. The banner at the top is already built.
 **Route:** `/crew`

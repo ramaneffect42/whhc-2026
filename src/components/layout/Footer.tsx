@@ -3,7 +3,7 @@ import { NAV, SITE, SOCIALS } from "@/lib/site";
 
 export default function Footer() {
   return (
-    <footer className="relative z-10 border-t border-line bg-black/70 backdrop-blur-sm">
+    <footer className="relative z-10 border-t border-line bg-bg/70 backdrop-blur-sm">
       <div className="container-x grid gap-12 py-14 md:grid-cols-[1.4fr_1fr_1fr]">
         <div>
           <p className="font-display text-4xl font-bold tracking-wider text-brand glow-text">
