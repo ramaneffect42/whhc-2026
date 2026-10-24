@@ -42,3 +42,6 @@ next-env.d.ts
 
 # local task tracker (contains member names)
 WHHC-Task-Sheet.xlsx
+
+# raw originals of crew photos (compressed copies live in public/images/crew)
+/WHHC junior bods/

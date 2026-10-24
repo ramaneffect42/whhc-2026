@@ -7,6 +7,10 @@
 > 4. Build one section per file in `_components/`, content from a `src/data/*.ts` file, using the section template in AGENTS.md §6.
 > 5. Finish only when `npm run lint` and `npm run build` pass, then tick "Done when" below.
 
+> ### ✅ Status
+> The page is **built**: `src/data/crew.ts` holds the people, `_components/` has `CrewContent`, `CrewSection` and `MemberCard`, and the junior board photos are in `public/images/crew/`.
+> **Still to do:** (1) add the **senior board** to `src/data/crew.ts` (`group: "senior"` — the section appears automatically), (2) add **faculty photos** and confirm the faculty names. To add a person: add one object to `CREW`, and drop a 640×800 photo (under 300 KB) in `public/images/crew/`.
+
 **You edit:** `src/app/crew/_components/CrewContent.tsx` (and any new files in that `_components` folder), plus create `src/data/crew.ts` for the people data.
 **Don't touch:** anything else. The banner at the top is already built.
 **Route:** `/crew`
